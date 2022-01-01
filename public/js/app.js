@@ -33,7 +33,7 @@ weatherForm.addEventListener('submit', (e) => {
         // console.log('Please enter a location to search');
         return;
     }
-    const searchUrl = 'http://localhost:3000/weather?address=' + location;
+    const searchUrl = '/weather?address=' + location;
 
     p1.textContent = 'Loading...'
     p5.textContent = 'Loading...'
