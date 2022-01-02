@@ -42,7 +42,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'HELP',
-        name: 'Qwerty Ten',
+        name: 'Ariv Debnath',
     });
 })
 
