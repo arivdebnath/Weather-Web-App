@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
             callback(body.message, undefined);
         }
         else{
-            callback(undefined, body.current);
+            callback(undefined, body);
         }
     })
 }

@@ -61,24 +61,44 @@ app.get('/weather', (req, res) => {
         });
     }
 
-    geoCode(req.query.address, (error, { latitude, longitude, placeName} = {}) => {
+    geoCode(req.query.address, (error, { latitude, longitude, placeName } = {}) => {
         if (error) {
             return res.send({
                 error,
             })
         }
-        forecast(latitude, longitude, (error2, { weather, feels_like, temp } = {}) => {
+        forecast(latitude, longitude, (error2, { current, timezone_offset } = {}) => {
             if (error2) {
                 return res.send({
                     error2,
                 })
             }
+            dateObj = new Date((current.dt+timezone_offset) * 1000);
+            utcString = dateObj.toUTCString();
+            time = utcString.slice(-11, -4);
+            // dateObj = new Date( * 1000);
+
+            // // Get hours from the timestamp
+            // hours = dateObj.getUTCHours();
+
+            // // Get minutes part from the timestamp
+            // minutes = dateObj.getUTCMinutes();
+
+            // // Get seconds part from the timestamp
+            // seconds = dateObj.getUTCSeconds();
+
+            // formattedTime = hours.toString().padStart(2, '0') + ':' +
+            //     minutes.toString().padStart(2, '0') + ':' +
+            //     seconds.toString().padStart(2, '0');
+
             return res.send({
-                weather,
-                feels_like,
-                temp,
+                time,
+                timezone_offset,
+                weather: current.weather,
+                feels_like: current.feels_like,
+                temp: current.temp,
                 placeName,
-                latitude, 
+                latitude,
                 longitude,
             })
         })

@@ -16,6 +16,7 @@ const p2 = document.querySelector('#p2');
 const p3 = document.querySelector('#p3');
 const p4 = document.querySelector('#p4');
 const p5 = document.querySelector('#p5');
+const p0 = document.querySelector('#p0');
 
 
 weatherForm.addEventListener('submit', (e) => {
@@ -29,6 +30,7 @@ weatherForm.addEventListener('submit', (e) => {
         p2.textContent = '';
         p3.textContent = '';
         p4.textContent = '';
+        p0.textContent = '';
 
         // console.log('Please enter a location to search');
         return;
@@ -40,6 +42,7 @@ weatherForm.addEventListener('submit', (e) => {
     p2.textContent = 'Loading...'
     p3.textContent = 'Loading...'
     p4.textContent = 'Loading...'
+    p0.textContent = 'Loading...'
 
     fetch(searchUrl).then((response) => {
         response.json().then((data) => {
@@ -49,6 +52,7 @@ weatherForm.addEventListener('submit', (e) => {
                 p2.textContent = '';
                 p3.textContent = '';
                 p4.textContent = '';
+                p0.textContent = '';
                 // console.log(data.error);
             } else {
                 p1.textContent = 'Location: ' + ' ' +  data.placeName
@@ -56,7 +60,7 @@ weatherForm.addEventListener('submit', (e) => {
                 p2.textContent = 'Temperature: ' + data.temp+ '℃'
                 p3.textContent = 'Latitude: '+ data.latitude
                 p4.textContent = 'Longitude: '+ data.longitude
-                
+                p0.textContent = 'Local Time: ' + data.time
             }
 
         })
