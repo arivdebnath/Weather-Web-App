@@ -8,3 +8,4 @@ Checkout the web app [**here.**](https://debnath-weather-app.herokuapp.com/)
 - [ ] Local  data and time of the searched location
 - [ ] Rain forecast
 - [ ] Representation of all the data in tabular format 
+- [ ] Getting weather of the current location using a single click.
