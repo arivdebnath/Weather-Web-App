@@ -9,3 +9,4 @@ Checkout the web app [**here.**](https://debnath-weather-app.herokuapp.com/)
 - [ ] Rain forecast
 - [ ] Representation of all the data in tabular format 
 - [ ] Getting weather of the current location using a single click.
+- [ ] Better front-end design
