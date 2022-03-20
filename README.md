@@ -10,3 +10,5 @@ Checkout the web app [**here.**](https://debnath-weather-app.herokuapp.com/)
 - [ ] Representation of all the data in tabular format 
 - [ ] Getting weather of the current location using a single click.
 - [ ] Better front-end design
+  - [ ] Adding Dark Mode
+  
